@@ -45,7 +45,7 @@ public class HandleOption {
                 map.put("keyButtons", keywordsFormatList.get(i).getKeywordsButtons());
                 String[] content = currentMap.get("crontabOption").split("、");
                 map.put("text", content[1]);
-                map.put("delMessageTime", content[2]);
+                map.put("delMessageTime", Integer.parseInt(content[2]));
                 if (content.length == 3) {
                     if ("AllowMedia".equalsIgnoreCase(content[0]) && "open".equals(groupInfoWithBLOBs.getNightmodeflag())) {
                         schedulerService.updateTrigger(keywordsFormatList.get(i).getReplyText(), AllowMedia.class, content[0] + "job" + "_" + groupId + "_" + i, content[0] + "group" + "_" + groupId + "_" + i, map);
